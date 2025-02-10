@@ -23,6 +23,11 @@ const Box = styled(motion.a)`
     background-color: ${(props) => props.theme.text};
     transition: all 0.3s ease;
   }
+
+  @media (max-width: 768px) {
+    width: 80vw;
+    margin: 2rem auto;
+  }
 `;
 
 const Image = styled.div`
@@ -55,11 +60,12 @@ const HashTags = styled.div`
 const Tag = styled.span`
   padding-right: 0.5rem;
 `;
-const Date = styled.span`
-  padding: 0.5rem 0;
-`;
 
-const Container = styled(motion.div)``;
+const Container = styled(motion.div)`
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
+`;
 
 // Framer motion configuration
 const Item = {
@@ -76,7 +82,7 @@ const Item = {
 };
 
 const BlogComponent = (props) => {
-  const { name, tags, date, imgSrc, link } = props.blog;
+  const { name, tags, imgSrc, link } = props.blog;
   return (
     <Container variants={Item}>
       <Box target="_blank" href={`${link}`}>
@@ -87,7 +93,6 @@ const BlogComponent = (props) => {
             return <Tag key={id}>#{t}</Tag>;
           })}
         </HashTags>
-        <Date>{date}</Date>
       </Box>
     </Container>
   );
