@@ -34,7 +34,7 @@ export const Instagram = (props) => {
   )
 }
 
-export const Linkedin = (props) => {
+export const LinkedIn = (props) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"

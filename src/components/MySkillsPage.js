@@ -14,8 +14,17 @@ const Box = styled.div`
   height: 100vh;
   position: relative;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  overflow-x: hidden;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 2rem;
+  }
 `
 
 const Main = styled.div`
@@ -23,8 +32,8 @@ const Main = styled.div`
   color: ${props => props.theme.text};
   background-color: ${props => props.theme.body};
   padding: 2rem;
-  width: 30vw;
-  height: 60vh;
+  width: 90vw;
+  height: auto;
   z-index: 3;
   line-height: 1.5;
   cursor: pointer;
@@ -32,6 +41,13 @@ const Main = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 1rem 0;
+
+  @media (min-width: 768px) {
+    width: 30vw;
+    height: 60vh;
+    margin: 0;
+  }
 
   &:hover {
     color: ${props => props.theme.body};
@@ -44,6 +60,7 @@ const Title = styled.h2`
   justify-content: center;
   align-items: center;
   font-size: calc(1em + 1vw);
+  margin-bottom: 1rem;
 
   ${Main}:hover & {
     & > * {
@@ -68,10 +85,25 @@ const Description = styled.div`
   strong {
     margin-bottom: 1rem;
     text-transform: uppercase;
+    display: block;
+    margin-top: 1rem;
   }
 
-  ul, p {
-    margin-left: 2rem;
+  ul {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+`
+
+const BigTitleStyled = styled(BigTitle)`
+  @media (max-width: 767px) {
+    font-size: calc(0.5em + 3vw);
+    top: 90%;
+    right: 10%;
   }
 `
 
@@ -117,7 +149,7 @@ const MySkillsPage = () => {
                         </ul>
                     </Description>
                 </Main>
-                <BigTitle text="SKILLS" top="80%" right="30%" />
+                <BigTitleStyled text="SKILLS" top="80%" right="30%" />
             </Box>
         </ThemeProvider>
     )

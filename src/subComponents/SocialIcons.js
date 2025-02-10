@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 // import { NavLink } from 'react-router-dom'
 import styled from "styled-components";
-import { Instagram, Linkedin, YouTube } from "../components/AllSvgs";
+import { Instagram, LinkedIn, YouTube } from "../components/AllSvgs";
 import { DarkTheme } from "../components/Themes";
 
 const Icons = styled.div`
@@ -39,7 +39,8 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://www.instagram.com/editfusionhimanshu/reels/"}
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/editfusionhimanshu/reels/"
         >
           <Instagram
             width={25}
@@ -56,9 +57,10 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://www.linkedin.com/in/himanshu-kumar-025a39349?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"}
+          rel="noopener noreferrer"
+          href="https://www.linkedin.com/in/himanshu-kumar-025a39349"
         >
-          <Linkedin
+          <LinkedIn
             width={25}
             height={25}
             fill={props.theme === "dark" ? DarkTheme.text : DarkTheme.body}
@@ -90,7 +92,8 @@ const SocialIcons = (props) => {
         <a
           style={{ color: "inherit" }}
           target="_blank"
-          href={"https://www.youtube.com/@EditFusionHimanshu/videos"}
+          rel="noopener noreferrer"
+          href="https://www.youtube.com/@EditFusionHimanshu/videos"
         >
           <YouTube
             width={25}
